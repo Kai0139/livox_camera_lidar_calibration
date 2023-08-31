@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   
-    <param name="intrinsic_path"    value="/home/iadc02/bags/nv_ext_calib/params/intrinsics.txt" />  <!-- intrinsic file -->
+    <param name="intrinsic_path"    value="/home/iadc02/bags/ext_calib2/params/intrinsics.txt" />  <!-- intrinsic file -->
     <param name="input_photo_path"  value="/home/iadc02/bags/nv_ext_calib/images/0.bmp" />  <!-- photo to find the corner -->
     <param name="ouput_path"        value="/home/iadc02/bags/nv_ext_calib/image_corners/corner_photo0.txt" />  <!-- file to save the photo corner -->
     
