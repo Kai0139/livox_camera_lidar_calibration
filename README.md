@@ -19,8 +19,6 @@ Install the ROS environment，install [Livox SDK](https://github.com/Livox-SDK/L
 ```
 # install Livox_SDK
 git clone https://github.com/Livox-SDK/Livox-SDK.git
-cd Livox-SDK
-sudo ./third_party/apr/apr_build.sh
 cd build && cmake ..
 make
 sudo make install

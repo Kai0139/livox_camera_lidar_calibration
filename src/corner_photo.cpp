@@ -19,6 +19,12 @@ cv::Mat gray_img, src_img;
 cv::RNG  random_number_generator;
 string photo_path, output_name, intrinsic_path;
 
+void onMouse(int event, int x, int y, int flags, void *userdata)
+{
+    if(event == cv::EVENT_LBUTTONUP)
+        std::cout << "x = " << x << " y = " << y <<std::endl;
+}
+
 void writeData(const string filename, const float x, const float y, uint mode) {
     ofstream outfile(filename.c_str(), ios_base::app);
     if (!outfile) {
@@ -103,6 +109,7 @@ int main(int argc, char **argv) {
     // cv::namedWindow("source", CV_WINDOW_KEEPRATIO);
     cv::namedWindow("source");
     cv::imshow("source", src_img);
+    cv::setMouseCallback("source", onMouse);
     cv::waitKey(0);
     
     cv::destroyWindow("source");
