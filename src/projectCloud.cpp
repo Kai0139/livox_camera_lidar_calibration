@@ -43,12 +43,13 @@ void loadPointcloudFromROSBag(const string& bag_path) {
     }
 
     vector<string> types;
-    types.push_back(string("livox_ros_driver/CustomMsg"));  // message title
+    types.push_back(string("livox_ros_driver2/CustomMsg"));  // message title
     rosbag::View view(bag, rosbag::TypeQuery(types));
 
     for (const rosbag::MessageInstance& m : view) {
         livox_ros_driver::CustomMsg livoxCloud = *(m.instantiate<livox_ros_driver::CustomMsg>()); // message type
         lidar_datas.push_back(livoxCloud);
+        std::cout << "push back custom msg" << std::endl;
         if (lidar_datas.size() > (threshold_lidar/24000 + 1)) {
             break;
         }
